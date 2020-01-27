@@ -1,8 +1,11 @@
 node{
   stage('SCM Checkout'){
-    git 'https://github.com/kumarsolanki/FirstSpringApplication'
+         git 'https://github.com/kumarsolanki/FirstSpringApplication'
     }
   stage('Complie-Package'){
-  sh 'mvn package'
-   }
-  }
+       sh 'mvn package'
+    }
+  stage('mail-send'){
+      mail bcc: '', body: 'Jenkins build is successfull', cc: '', from: '', replyTo: '', subject: 'Jenkins Build', to: 'aashishsolanki004@gmail.com'
+  }   
+}
