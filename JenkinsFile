@@ -3,7 +3,6 @@ node{
     git 'https://github.com/kumarsolanki/FirstSpringApplication'
     }
   stage('Complie-Package'){
-  def mvnHome =  tool name: 'MavenBuild', type: 'maven'
-    sh "${mvnHome}/bin/mvn package"
+  sh 'mvn package'
    }
   }
